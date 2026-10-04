@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esxi-mcp"
+version = "0.3.0"
+description = "Standalone ESXi resource management MCP server with typed vSphere API access"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["mcp", "esxi", "vmware", "pyvmomi"]
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.28,<2",
+    "pyvmomi>=8.0.0.1",
+]
+
+[project.optional-dependencies]
+admin = ["paramiko>=3,<5"]
+dev = [
+    "pytest>=8",
+    "build>=1.2",
+]
+
+[project.scripts]
+esxi-mcp = "esxi_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

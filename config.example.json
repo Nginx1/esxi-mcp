@@ -1,0 +1,14 @@
+{
+  "protected_vm_ids": [],
+  "enable_writes": false,
+  "connect_timeout": 30,
+  "policy_profile": "operator",
+  "allowed_operations": [],
+  "denied_operations": [],
+  "protected_datastores": [],
+  "protected_networks": [],
+  "allow_protected_impact": false,
+  "allow_management_disruption": false,
+  "ssh_admin_enabled": false,
+  "lease_session_timeout": 86400
+}

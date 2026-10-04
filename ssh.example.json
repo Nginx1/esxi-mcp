@@ -1,0 +1,7 @@
+{
+  "host": "esxi.example.com",
+  "port": 22,
+  "user": "mcp-service-account",
+  "key_filename": "/private/path/esxi_admin_key",
+  "host_key_sha256": "SHA256:REPLACE_WITH_VERIFIED_ESXI_HOST_KEY_FINGERPRINT"
+}
