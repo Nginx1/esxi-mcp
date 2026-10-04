@@ -70,4 +70,4 @@ python -m build
 
 0.3.0 已部署。Windows 和 Linux/Python 3.12 各通过 121 项自动测试，另通过 9 项离线 SDK 写调用、4 项临时本地 SSH 集成检查。API 8.0.2.0 实机通过 15 项临时 VM 检查、8 项完整流程检查（专用网络、重复请求、补偿、12MiB 文件传输及完整 OVF 导出/导入）和 3 项真实 ESXCLI 查询。临时资源已清理，本轮开始时的 33 台既有 VM 与原网络配置保持一致。这些结果不代表所有版本、硬件和破坏性操作都验证过；范围见 [测试证据](docs/testing.md)。
 
-发布仅使用干净源码包；私人配置、state 数据库、传输暂存、审计和原始实机结果不得上传。GitHub Actions 已配置，未在 GitHub 执行。MIT 允许使用、修改和商业使用，分发需保留许可声明。安全问题见 [SECURITY](SECURITY.md)。
+发布仅使用干净源码包；私人配置、state 数据库、传输暂存、审计和原始实机结果不得上传。GitHub Actions 的 Ubuntu/Windows × Python 3.10/3.12 四个组合已全部通过，每组完成 121 项测试、SDK 合约、SSH 本地集成与构建；见 [验证记录](https://github.com/Nginx1/esxi-mcp/actions/runs/37181729677)。MIT 允许使用、修改和商业使用，分发需保留许可声明。安全问题见 [SECURITY](SECURITY.md)。

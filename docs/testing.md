@@ -13,7 +13,7 @@ Evidence dates: 2026-10-03–04 (Asia/Shanghai). Source and deployed version: **
 | v0.3 real ESXi SSH | 3 queries passed | system version, standard vSwitch inventory, storage filesystems; pre-existing trusted known_hosts; SSH service state/policy unchanged |
 | v0.3 existing resources | Stable baseline comparisons passed | 33 existing VM IDs/UUIDs/names/power/CPU/memory; original network config; owned temporary resources removed |
 | v0.3 transport | Windows → pinned SSH → deployed MCP → ESXi passed | 63-tool discovery, real reads, write previews and wrong-name refusal |
-| Python 3.10 / GitHub CI | Not run | Ubuntu/Windows × Python 3.10/3.12 workflow configured |
+| GitHub CI / Python 3.10 and 3.12 | All four jobs passed; 121 tests in each | Ubuntu/Windows matrix; SDK write contracts, SSH loopback integration and package build also passed; [verified run](https://github.com/Nginx1/esxi-mcp/actions/runs/37181729677) |
 | v0.2 retained evidence | 43 live checks passed | 15 VM, 22 resource, 6 NFC; 32 original VMs unchanged at that earlier run |
 
 The live host reports API 8.0.2.0. The v0.3 count of 33 is the baseline for the current run; the older 32-VM baseline is retained as historical evidence. Owned resources from failed attempts were also removed before the final passing run. Testing found and fixed independent-module circular imports, host Tools ISO paths incorrectly interpreted as datastore files, and reversed OVF upload method selection. For SDK file semantics, ordinary created files use PUT and an Overwrite header, while stream VMDK disks use POST; see [Broadcom/VMware govmomi implementation](https://github.com/vmware/govmomi/blob/main/nfc/lease.go).
